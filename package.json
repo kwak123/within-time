@@ -5,5 +5,11 @@
   "main": "index.js",
   "repository": "https://github.com/kwak123/within-time",
   "author": "kwak123 <kwak123@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel index.ts"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
 }
