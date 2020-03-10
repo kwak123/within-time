@@ -28,7 +28,7 @@ describe('within-time', () => {
 
           if (procList.length > 1) {
             procList.forEach(proc => {
-              const isTest = proc.arguments.includes('test');
+              const isTest = proc.arguments[1] === 'test';
               const isJest = proc.arguments[0].includes('jest');
               const isNotTestProcess = !isJest && !isTest;
               if (isNotTestProcess) {
@@ -41,5 +41,5 @@ describe('within-time', () => {
           done();
         },
       );
-    }, 2000);
+    }, 200);
 });
