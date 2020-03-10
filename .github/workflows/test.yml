@@ -1,6 +1,9 @@
 name: Test
 
 on:
+  push:
+    branches-ignore:
+      - master
   pull_request:
     branches:
       - master
@@ -11,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Install packages
+        uses: borales/actions-yarn@v2.1.0
+        with:
+          cmd: install
       - name: Run tests
         uses: borales/actions-yarn@v2.1.0
         with:
