@@ -33,3 +33,5 @@ within-time ./test/scenarios/doesNotClose.js
 
 - Run multiple files in a directory
 - Configure time constraint via cli
+- Prettier outputting
+- Relevant examples?
