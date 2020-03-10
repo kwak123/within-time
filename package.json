@@ -16,5 +16,14 @@
   },
   "dependencies": {
     "ps-node": "^0.1.6"
+  },
+  "bin": {
+    "within-time": "./index.js"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
