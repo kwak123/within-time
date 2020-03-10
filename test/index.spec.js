@@ -3,8 +3,14 @@ const ps = require('ps-node');
 const subject = require('../index');
 
 describe('within-time', () => {
-  it('true', done => {
+  it('should be silent if process close within the right amount of time', done => {
     const filePath = path.resolve('./test/scenarios/closesAsExpected.js');
+    subject(filePath);
+    checkProcessesAreKilled(done);
+  });
+
+  it('should close process if exceeds timelimit', done => {
+    const filePath = path.resolve('./test/scenarios/doesNotClose');
     subject(filePath);
     checkProcessesAreKilled(done);
   });
@@ -35,5 +41,5 @@ describe('within-time', () => {
           done();
         },
       );
-    }, 3000);
+    }, 2000);
 });
