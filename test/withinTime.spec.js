@@ -1,6 +1,6 @@
 const path = require('path');
 const ps = require('ps-node');
-const subject = require('../index');
+const subject = require('../lib/withinTime');
 
 describe('within-time', () => {
   it('should be silent if process close within the right amount of time', done => {
