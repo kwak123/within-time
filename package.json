@@ -12,10 +12,11 @@
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "ps-node": "^0.1.6"
   },
   "dependencies": {
-    "ps-node": "^0.1.6"
+    "chalk": "^3.0.0"
   },
   "bin": {
     "within-time": "./index.js"

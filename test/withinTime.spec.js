@@ -41,5 +41,5 @@ describe('within-time', () => {
           done();
         },
       );
-    }, 200);
+    }, 500);
 });
