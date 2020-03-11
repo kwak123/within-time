@@ -4,7 +4,6 @@ jest.mock('../lib/withinTime');
 
 describe('cli', () => {
   let consoleSpy;
-  let withinTimeMock;
 
   afterAll(() => {
     jest.restoreAllMocks();
@@ -24,13 +23,24 @@ describe('cli', () => {
       expect(consoleSpy).toHaveBeenCalled();
     });
 
-    it('should call withinTime if provided good file name', () => {
+    it('should call withinTime if provided good file name and timeout', () => {
       const ignoredOne = 'one';
       const ignoredTwo = 'two';
-      const goodFileName = 'fileName';
+      const goodFileName = 'fileName.js';
+      const timeout = 100;
+      const args = [ignoredOne, ignoredTwo, goodFileName, timeout];
+      subject(args);
+      expect(withinTime).toBeCalledWith(goodFileName, timeout);
+    });
+
+    it('should call withinTime with default timeout of 1000ms if provided good file name', () => {
+      const ignoredOne = 'one';
+      const ignoredTwo = 'two';
+      const goodFileName = 'fileName.js';
+      const defaultTimeout = 1000;
       const args = [ignoredOne, ignoredTwo, goodFileName];
       subject(args);
-      expect(withinTime).toBeCalledWith(goodFileName);
+      expect(withinTime).toBeCalledWith(goodFileName, defaultTimeout);
     });
   });
 });
