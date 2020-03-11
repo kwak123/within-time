@@ -5,13 +5,13 @@ const subject = require('../lib/withinTime');
 describe('within-time', () => {
   it('should be silent if process close within the right amount of time', done => {
     const filePath = path.resolve('./test/scenarios/closesAsExpected.js');
-    subject(filePath);
+    subject(filePath, 200);
     checkProcessesAreKilled(done);
   });
 
   it('should close process if exceeds timelimit', done => {
     const filePath = path.resolve('./test/scenarios/doesNotClose');
-    subject(filePath);
+    subject(filePath, 200);
     checkProcessesAreKilled(done);
   });
 
