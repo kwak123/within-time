@@ -32,5 +32,15 @@ describe('cli', () => {
       subject(args);
       expect(withinTime).toBeCalledWith(goodFileName, timeout);
     });
+
+    it('should call withinTime with default timeout of 1000ms if provided good file name', () => {
+      const ignoredOne = 'one';
+      const ignoredTwo = 'two';
+      const goodFileName = 'fileName.js';
+      const defaultTimeout = 1000;
+      const args = [ignoredOne, ignoredTwo, goodFileName];
+      subject(args);
+      expect(withinTime).toBeCalledWith(goodFileName, defaultTimeout);
+    });
   });
 });
