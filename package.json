@@ -1,6 +1,6 @@
 {
   "name": "within-time",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Run Node.js files with a set timeout",
   "main": "index.js",
   "repository": "https://github.com/kwak123/within-time",
