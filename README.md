@@ -1,3 +1,5 @@
+![version-badge](https://img.shields.io/npm/v/within-time)
+
 # Within Time
 
 Within-Time was made to facilitate handling time constraints when running Node.js files. Really, it's because I got tired of using my fans as an indicator of a broken recursive function.
