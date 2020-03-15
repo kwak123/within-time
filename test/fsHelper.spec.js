@@ -10,6 +10,10 @@ describe('FSHelper', () => {
       subject = new FSHelper(directoryPath);
     });
 
-    it('should pass', () => {});
+    describe('isDirectory', () => {
+      it('should return true, if in directory', () => {
+        expect(subject.isDirectory()).toBe(true);
+      });
+    });
   });
 });
