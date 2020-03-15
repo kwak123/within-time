@@ -12,13 +12,13 @@ describe('FSHelper', () => {
 
     describe('isDirectory', () => {
       it('should return true', () => {
-        expect(subject.isDirectory()).toBe(true);
+        expect(subject.isDirectory).toBe(true);
       });
     });
 
     describe('isFile', () => {
       it('should return false', () => {
-        expect(subject.isFile()).toBe(false);
+        expect(subject.isFile).toBe(false);
       });
     });
   });
