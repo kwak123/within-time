@@ -2,7 +2,7 @@ const path = require('path');
 const FSHelper = require('../lib/fsHelper');
 
 describe('FSHelper', () => {
-  describe('with directory', () => {
+  describe('with directory path', () => {
     const directoryPath = path.resolve('./test/fsScenarios');
     let subject;
 
@@ -29,6 +29,34 @@ describe('FSHelper', () => {
         expectedFileNames.forEach(fileName =>
           expect(receivedFileNames).toContain(fileName),
         );
+      });
+    });
+  });
+
+  describe('with file path', () => {
+    const filePath = path.resolve('./test/fsScenarios/fileOne.js');
+    let subject;
+
+    beforeEach(() => {
+      subject = new FSHelper(filePath);
+    });
+
+    describe('isDirectory', () => {
+      it('should return false', () => {
+        expect(subject.isDirectory).toBe(false);
+      });
+    });
+
+    describe('isFile', () => {
+      it('should return true', () => {
+        expect(subject.isFile).toBe(true);
+      });
+    });
+
+    describe('getFileNames', () => {
+      it('should throw error', async () => {
+        // Don't really care what it throws
+        await expect(subject.getFileNames()).rejects.toBeTruthy();
       });
     });
   });
