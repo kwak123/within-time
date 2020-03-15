@@ -10,7 +10,7 @@ describe('within-time', () => {
   });
 
   it('should close process if exceeds timelimit', done => {
-    const filePath = path.resolve('./test/scenarios/doesNotClose');
+    const filePath = path.resolve('./test/scenarios/doesNotClose.js');
     subject(filePath, 200);
     checkProcessesAreKilled(done);
   });
