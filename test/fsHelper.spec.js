@@ -22,15 +22,15 @@ describe('FSHelper', () => {
       });
     });
 
-    describe('getFileNames', () => {
-      it('should return all file names', async () => {
-        const expectedFileNames = [
+    describe('getFilePaths', () => {
+      it('should return all file paths', async () => {
+        const expectedFilePaths = [
           path.resolve('./test/fsScenarios/fileOne.js'),
           path.resolve('./test/fsScenarios/fileTwo.js'),
         ];
-        const receivedFileNames = await subject.getFileNames();
-        expectedFileNames.forEach(fileName =>
-          expect(receivedFileNames).toContain(fileName),
+        const receivedFilePaths = await subject.getFilePaths();
+        expectedFilePaths.forEach(filePath =>
+          expect(receivedFilePaths).toContain(filePath),
         );
       });
     });
@@ -59,7 +59,7 @@ describe('FSHelper', () => {
     describe('getFileNames', () => {
       it('should throw error', async () => {
         // Don't really care what it throws
-        await expect(subject.getFileNames()).rejects.toBeTruthy();
+        await expect(subject.getFilePaths()).rejects.toBeTruthy();
       });
     });
   });
