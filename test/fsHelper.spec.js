@@ -24,7 +24,10 @@ describe('FSHelper', () => {
 
     describe('getFileNames', () => {
       it('should return all file names', async () => {
-        const expectedFileNames = ['fileOne.js', 'fileTwo.js'];
+        const expectedFileNames = [
+          path.resolve('./test/fsScenarios/fileOne.js'),
+          path.resolve('./test/fsScenarios/fileTwo.js'),
+        ];
         const receivedFileNames = await subject.getFileNames();
         expectedFileNames.forEach(fileName =>
           expect(receivedFileNames).toContain(fileName),
