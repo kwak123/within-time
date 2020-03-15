@@ -2,7 +2,7 @@ const path = require('path');
 const FSHelper = require('../lib/fsHelper');
 
 describe('FSHelper', () => {
-  describe('directory', () => {
+  describe('with directory', () => {
     const directoryPath = path.resolve('./test/scenarios');
     let subject;
 
@@ -11,8 +11,14 @@ describe('FSHelper', () => {
     });
 
     describe('isDirectory', () => {
-      it('should return true, if in directory', () => {
+      it('should return true', () => {
         expect(subject.isDirectory()).toBe(true);
+      });
+    });
+
+    describe('isFile', () => {
+      it('should return false', () => {
+        expect(subject.isFile()).toBe(false);
       });
     });
   });
