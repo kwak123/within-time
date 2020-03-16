@@ -15,6 +15,13 @@ describe('within-time', () => {
     checkProcessesAreKilled(done);
   });
 
+  // worst test name ever
+  it('should handle directories', done => {
+    const directoryPath = path.resolve('./test/scenarios');
+    subject(directoryPath, 200);
+    checkProcessesAreKilled(done);
+  });
+
   const checkProcessesAreKilled = done =>
     setTimeout(() => {
       ps.lookup(
