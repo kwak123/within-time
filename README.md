@@ -10,7 +10,7 @@ With how small and focused in scope Within-Time is, I'd advise using good ol' [n
 
 ### Recommended
 
-`npx within-time <file-name>`
+`npx within-time <path>`
 
 ### Global
 
@@ -31,9 +31,16 @@ within-time test/scenarios/doesNotClose.js
 within-time ./test/scenarios/doesNotClose.js
 ```
 
+You can also pass directory paths!
+
+```
+within-time test/scenarios
+```
+
 ## Upcoming
 
-- Run multiple files in a directory
+- Nested directories
+  - Will need to consider resource limits, given nature of `child_process.fork`
 - Configure time constraint via cli
 - Prettier outputting
 - Relevant examples?
