@@ -38,11 +38,11 @@ describe('FSHelper', () => {
   });
 
   describe('with file path', () => {
-    const filePath = path.resolve('./test/fsScenarios/fileOne.js');
+    const jsFilePath = path.resolve('./test/fsScenarios/fileOne.js');
     let subject;
 
     beforeEach(() => {
-      subject = new FSHelper(filePath);
+      subject = new FSHelper(jsFilePath);
     });
 
     describe('isDirectory', () => {
@@ -52,8 +52,16 @@ describe('FSHelper', () => {
     });
 
     describe('isFile', () => {
-      it('should return true', () => {
+      it('should return true if given JS file path', () => {
+        const validJSFilePath = jsFilePath;
+        subject = new FSHelper(validJSFilePath);
         expect(subject.isFile).toBe(true);
+      });
+
+      it('should return false if given non-JS file path', () => {
+        const nonJSFilePath = path.resolve('./test/fsScenarios/nonJsFile');
+        subject = new FSHelper(nonJSFilePath);
+        expect(subject.isFile).toBe(false);
       });
     });
 
