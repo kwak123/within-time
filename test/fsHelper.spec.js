@@ -29,6 +29,7 @@ describe('FSHelper', () => {
           path.resolve('./test/fsScenarios/fileTwo.js'),
         ];
         const receivedFilePaths = await subject.getFilePaths();
+        expect(receivedFilePaths).toHaveLength(expectedFilePaths.length);
         expectedFilePaths.forEach(filePath =>
           expect(receivedFilePaths).toContain(filePath),
         );
